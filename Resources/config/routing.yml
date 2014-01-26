@@ -1,0 +1,12 @@
+mattwellss_gradebook_students:
+    pattern: /all-students
+    defaults: { _controller: MattwellssGradebookBundle:Student:list }
+mattwellss_gradebook_courses:
+    pattern: /all-courses
+    defaults: { _controller: MattwellssGradebookBundle:Course:list }
+mattwellss_gradebook_student:
+    pattern: /students/{studentId}
+    defaults: { _controller: MattwellssGradebookBundle:Student:getStudent }
+mattwellss_gradebook_course:
+    pattern: /courses/{courseId}
+    defaults: { _controller: MattwellssGradebookBundle:Course:getCourse }

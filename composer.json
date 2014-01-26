@@ -1,0 +1,26 @@
+{
+    "name": "mattwellss/gradebook-bundle",
+    "type": "symfony-bundle",
+    "description": "Sample bundle with CLI commands to keep track of student grades for courses and simple views for looking at their relationships",
+    "keywords": ["education", "example", "symfony2", "bundle"],
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Matthew Wells",
+            "email": "matthewpaulwells@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/framework-bundle": "2.4.*",
+        "symfony/twig-bundle": "2.4.*",
+        "symfony/console": "2.4.*",
+        "doctrine/doctrine-bundle": "~1.2"
+    },
+    "autoload": {
+        "psr-0": {
+            "Mattwells\\Gradebookbundle": ""
+        }
+    },
+    "target-dir": "Mattwellss/GradebookBundle"
+}

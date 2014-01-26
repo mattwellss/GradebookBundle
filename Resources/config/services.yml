@@ -1,0 +1,7 @@
+parameters:
+#    mattwellss_gradebook.example.class: Mattwellss\GradebookBundle\Example
+
+services:
+#    mattwellss_gradebook.example:
+#        class: %mattwellss_gradebook.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}Test Application{% endblock %}</title>
+    <link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+  </head>
+  <body>
+    <header class="container">
+      <h1>{% block headline %}Page Title{% endblock %}</h1>
+      <nav>{% block navigation %}
+        <ul class="nav nav-tabs">
+          <li><a href="{{ path('mattwellss_gradebook_students') }}">Students</a></li>
+          <li><a href="{{ path('mattwellss_gradebook_courses') }}">Courses</a></li>
+        </ul>
+      {% endblock %}</nav>
+    </header>
+{#     <div id="sidebar">
+      {% block sidebar %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+        </ul>
+      {% endblock %}
+    </div> #}
+
+    <div id="content" class="container">
+      {% block body %}{% endblock %}
+    </div>
+  </body>
+</html>

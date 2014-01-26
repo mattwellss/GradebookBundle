@@ -1,0 +1,19 @@
+{% extends 'MattwellssGradebookBundle:Default:layout.html.twig' %}
+
+{% block title %}{{ student.firstName }} {{ student.lastName }}{% endblock %}
+
+{% block headline %}{{ student.firstName }} {{ student.lastName }}{% endblock %}
+
+{% block body %}
+<em>{{ student.id }}</em>
+<p>{{ student.birthDate | date('M j Y') }}</p>
+<ul>
+  {% for grade in student.grades %}
+  <li> {{ grade.grade }} in
+    <a href="{{ path('mattwellss_gradebook_course', {courseId: grade.course.id}) }}">
+      {{ grade.course.name }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
