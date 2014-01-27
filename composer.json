@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Mattwellss\\Gradebookbundle": ""
+            "Mattwellss\\GradebookBundle": ""
         }
     },
     "target-dir": "Mattwellss/GradebookBundle"
