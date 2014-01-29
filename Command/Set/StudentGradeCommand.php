@@ -1,6 +1,6 @@
 <?php
 
-namespace Mattwellss\GradebookBundle\Command;
+namespace Mattwellss\GradebookBundle\Command\Set;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
@@ -9,8 +9,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Mattwellss\GradebookBundle\Entity\Student;
 use Mattwellss\GradebookBundle\Entity\Grade;
 use Mattwellss\GradebookBundle\Entity\Course;
+use Mattwellss\GradebookBundle\Command\WriteCommand;
 
-class SetStudentGradeCommand extends BaseCommand
+class StudentGradeCommand extends WriteCommand
 {
     protected function configure()
     {
@@ -48,8 +49,7 @@ class SetStudentGradeCommand extends BaseCommand
             ->setStudent($student)
             ->setCourse($course);
 
-        $this->doctrine->getManager()->persist($grade);
-        $this->doctrine->getManager()->flush();
+        $this->persist($grade);
 
     }
 }

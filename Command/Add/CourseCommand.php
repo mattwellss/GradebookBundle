@@ -1,13 +1,14 @@
 <?php
 
-namespace Mattwellss\GradebookBundle\Command;
+namespace Mattwellss\GradebookBundle\Command\Add;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Mattwellss\GradebookBundle\Command\WriteCommand;
 use Mattwellss\GradebookBundle\Entity\Course;
 
-class AddCourseCommand extends BaseCommand
+class CourseCommand extends WriteCommand
 {
     protected function configure()
     {
@@ -23,10 +24,6 @@ class AddCourseCommand extends BaseCommand
         $course = new Course;
         $course->setName($input->getArgument('name'));
 
-        $mgr = $this->doctrine->getManager();
-
-        $mgr->persist($course);
-        $mgr->flush();
-
+        $this->persist($course);
     }
 }

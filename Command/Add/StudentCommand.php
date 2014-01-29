@@ -1,13 +1,14 @@
 <?php
 
-namespace Mattwellss\GradebookBundle\Command;
+namespace Mattwellss\GradebookBundle\Command\Add;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Mattwellss\GradebookBundle\Command\WriteCommand;
 use Mattwellss\GradebookBundle\Entity\Student;
 
-class AddStudentCommand extends BaseCommand
+class StudentCommand extends WriteCommand
 {
 
     const FRIENDLY_FORMAT = 'YYYY-MM-DD';
@@ -42,10 +43,7 @@ HELP
         $student->setLastName($input->getArgument('last_name'));
         $student->setBirthdate($birthdate);
 
-
-        $orm = $this->doctrine->getManager();
-        $orm->persist($student);
-        $orm->flush();
+        $this->persist($student);
 
         $output->writeln('Successfully created student (id: ' . $student->getId() . ')');
     }
